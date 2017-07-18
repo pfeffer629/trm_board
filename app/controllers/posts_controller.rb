@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     end
 
     @post = Post.find(params[:id])
-    @comments = @post.comments.reverse
+    @comments = @post.comments
   end
 
   private

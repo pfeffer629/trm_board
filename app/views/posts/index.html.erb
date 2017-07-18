@@ -4,11 +4,11 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <div>
-            <b><%= post.title %></b>
-            <p>by <%= post.user.first_name %> <%= post.user.last_name %></p>
+            <p><%= post.title %></p>
+            <p>by <i><%= post.user.first_name %> <%= post.user.last_name %></i></p>
           </div>
           <div class="text-right">
-            <p><%= post.created_at.strftime("%d %b %Y") %></p>
+            <%= post.created_at.strftime("%d %b %Y") %>
             <p>at <%= post.created_at.strftime("%H:%M") %></p>
           </div>
         </div>
