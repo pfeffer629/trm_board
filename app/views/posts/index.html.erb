@@ -7,7 +7,10 @@
             <b><%= post.title %></b>
             <p>by <%= post.user.first_name %> <%= post.user.last_name %></p>
           </div>
-          <p class="text-center"><%= post.created_at.strftime("%d %b %Y") %></p>
+          <div class="text-right">
+            <p><%= post.created_at.strftime("%d %b %Y") %></p>
+            <p>at <%= post.created_at.strftime("%H:%M") %></p>
+          </div>
         </div>
       </div>
     </a>

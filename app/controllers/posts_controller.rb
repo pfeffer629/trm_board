@@ -3,18 +3,18 @@ class PostsController < ApplicationController
   
   def index
     @post = Post.new
-    @posts = Post.paginate(:page => params[:page], :per_page => 5)
+    @posts = Post.reorder("created_at DESC").paginate(:page => params[:page], :per_page => 5)
   end
 
   def new
-    @post = Post.new
+    @new_post = Post.new
   end
 
   def create
-    @post = current_user.posts.new(post_params)
+    @new_post = current_user.posts.new(post_params)
 
-    if @post.save
-      redirect_to @post
+    if @new_post.save
+      redirect_to @new_post
     else
       render :action => 'new'
     end
@@ -48,7 +48,7 @@ class PostsController < ApplicationController
   end
   
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:new_post).permit(:title, :body)
   end
 
 end

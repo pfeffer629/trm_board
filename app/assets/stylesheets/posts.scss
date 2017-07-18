@@ -11,6 +11,10 @@ li {
   list-style: none;
 }
 
+.container {
+  margin-top: 20px;
+}
+
 header { 
   background-color: #DD2160;
   height: 80px;
@@ -62,14 +66,13 @@ body {
 }
 
 .posts {
-  padding: 20px;
   .panel-body {
     text-decoration: none;
     display: flex;
     justify-content: space-between;
-    align-items: center;    
+    align-items: center;
     div {
-      width: 90%;
+      width: 50%;
     }
   }
   .panel:hover {
@@ -86,7 +89,7 @@ body {
 }
 
 .back {
-  padding: 20px 0;
+  padding-bottom: 20px;
 }
 
 .btn {
