@@ -1,0 +1,26 @@
+<div class="back">
+  <a href="/">← Back</a>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading post-title"><%= @post.title %></div>
+  <div class="panel-body post-body"><%= @post.body %></div>
+</div>
+<hr>
+<p class="post-body">Leave a comment</p>
+<%= form_for(:comment, :url => post_path(params[:id]), :action => 'create_comment') do |f| %>
+  <div class="form-group">
+    <%= f.text_area :body, class:"form-control", rows: 5, required: true %>
+  </div>
+  <%= f.hidden_field :user_id, :value => @user_id %>
+  <div class="submit-container">
+    <div></div>
+    <%= f.submit 'Create Comment', class:"btn btn-primary"%>
+  </div>
+<% end %>
+<% @comments.each do |comment| %>
+  <hr>
+  <div class="comment">
+    <p><%= comment.body %><p>
+    <p>Posted by: <%= comment.user.first_name + " " + comment.user.last_name %><span class="pull-right"><%= comment.created_at.strftime("%d %b %Y") %> at <%= comment.created_at.strftime("%H:%M") %></span></p>
+  </div>
+<% end %>

@@ -1,0 +1,16 @@
+<div class="posts">
+  <% @posts.each do |post| %>
+    <a href="/posts/<%=post.id%>">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div>
+            <b><%= post.title %></b>
+            <p>by <%= post.user.first_name %> <%= post.user.last_name %></p>
+          </div>
+          <p class="text-center"><%= post.created_at.strftime("%d %b %Y") %></p>
+        </div>
+      </div>
+    </a>
+  <% end %>
+  <%= will_paginate @posts, class:"text-center" %>
+</div>

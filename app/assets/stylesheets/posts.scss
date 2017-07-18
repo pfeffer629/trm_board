@@ -1,0 +1,110 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@font-face {
+  font-family:'AvenirNext';
+  src:url(asset-path('fonts/avenirnext-regular-webfont.woff'));
+}
+
+li {
+  list-style: none;
+}
+
+header { 
+  background-color: #DD2160;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  font-family: 'AvenirNext';
+  justify-content: space-between;
+  a,
+  a:hover,
+  a:active,
+  a:focus {
+    color: #fff;
+    margin-left: 40px;
+    &:hover {
+      color: #fff;
+    }
+  }
+  ul {
+    float: right;
+    height: 100%;
+    margin: 0;
+    margin-right: 40px;
+    li {
+      display: inline-block;
+      line-height: 80px;
+      a:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.modal-header {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.modal-header {
+  background-color: #f5f5f5
+}
+
+body {
+  font-family: 'AvenirNext';
+}
+
+.submit-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.posts {
+  padding: 20px;
+  .panel-body {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    div {
+      width: 90%;
+    }
+  }
+  .panel:hover {
+    background-color: #f5f5f5;
+  }
+}
+
+.post-title {
+  font-size: 30px;
+}
+
+.post-body {
+  font-size: 20px;
+}
+
+.back {
+  padding: 20px 0;
+}
+
+.btn {
+  outline: none;
+}
+
+.btn-primary,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover {
+  border: #DD2160;
+  background-color: #DD2160;
+}
+
+a,
+a:focus,
+a:hover {
+  color: #333;
+  text-decoration: none !important;
+  outline: none;
+}
